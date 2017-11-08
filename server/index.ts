@@ -2,6 +2,7 @@ import * as E from "express";
 import * as bp from "body-parser";
 import * as fs from "fs"
 import * as path from "path";
+import * as _ from "lodash";
 
 
 //make a path that leads to all of my messages which is the collection path
@@ -20,7 +21,9 @@ app
 })
 .use(bp.json())
 .use(bp.urlencoded({extended:true}))
-.use(api, message);
+.use(api, function(req,res,next){
+    res.send()
+})
 
 
 //make a path that leads to one single message which is the item path
